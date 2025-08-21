@@ -8,14 +8,19 @@
 import SwiftUI
 
 struct ContentView: View {
+    private let mock = Person.getMock()
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
+            TabView {
+                Tab("Contacts", systemImage: "person.2") {
+                    ContactsView(mock: mock)
+                }
+                
+                Tab("Numbers", systemImage: "phone") {
+                    NumbersView(mock: mock)
+                }
+            }
+            .listStyle(.plain)
     }
 }
 
