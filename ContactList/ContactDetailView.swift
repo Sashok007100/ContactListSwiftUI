@@ -18,17 +18,8 @@ struct ContactDetailView: View {
                 .frame(height: 100)
                 .frame(maxWidth: .infinity)
                 
-            HStack {
-                Image(systemName: "phone")
-                    .foregroundStyle(.tint)
-                Text(mock.phone)
-            }
-            
-            HStack {
-                Image(systemName: "tray")
-                    .foregroundStyle(.tint)
-                Text(mock.email)
-            }
+            Label(mock.phone, systemImage: "phone")
+            Label(mock.email, systemImage: "tray")
         }
         .navigationTitle(mock.fullName)
         .listStyle(.insetGrouped)
