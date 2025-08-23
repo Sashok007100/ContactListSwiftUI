@@ -15,17 +15,8 @@ struct NumbersView: View {
             List {
                 ForEach(mock) { mock in
                     Section(mock.fullName) {
-                        HStack {
-                            Image(systemName: "phone")
-                                .foregroundStyle(.tint)
-                            Text(mock.phone)
-                        }
-                        
-                        HStack {
-                            Image(systemName: "tray")
-                                .foregroundStyle(.tint)
-                            Text(mock.email)
-                        }
+                        Label(mock.phone, systemImage: "phone")
+                        Label(mock.email, systemImage: "tray")
                     }
                 }
             }
