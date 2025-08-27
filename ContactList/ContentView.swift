@@ -8,16 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
-    private let mock = Person.getMock()
+    private let persons = Person.getPersons()
     
     var body: some View {
             TabView {
                 Tab("Contacts", systemImage: "person.2") {
-                    ContactsView(mock: mock)
+                    ContactsView(persons: persons)
                 }
                 
                 Tab("Numbers", systemImage: "phone") {
-                    NumbersView(mock: mock)
+                    NumbersView(persons: persons)
                 }
             }
             .listStyle(.plain)

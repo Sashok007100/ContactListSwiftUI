@@ -8,16 +8,14 @@
 import SwiftUI
 
 struct NumbersView: View {
-    var mock: [Person]!
+    var persons: [Person]!
     
     var body: some View {
         NavigationStack {
-            List {
-                ForEach(mock) { mock in
-                    Section(mock.fullName) {
-                        Label(mock.phone, systemImage: "phone")
-                        Label(mock.email, systemImage: "tray")
-                    }
+            List(persons) { person in
+                Section(person.fullName) {
+                    Label(person.phone, systemImage: "phone")
+                    Label(person.email, systemImage: "tray")
                 }
             }
             .navigationTitle("Contact List")
@@ -26,5 +24,5 @@ struct NumbersView: View {
 }
 
 #Preview {
-    NumbersView(mock: Person.getMock())
+    NumbersView(persons: Person.getPersons())
 }

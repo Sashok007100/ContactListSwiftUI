@@ -8,15 +8,13 @@
 import SwiftUI
 
 struct ContactsView: View {
-    var mock: [Person]!
+    var persons: [Person]!
     
     var body: some View {
         NavigationStack {
-            List {
-                ForEach(mock) { contact in
-                    NavigationLink(contact.fullName) {
-                        ContactDetailView(mock: contact)
-                    }
+            List(persons) { person in
+                NavigationLink(person.fullName) {
+                    ContactDetailView(person: person)
                 }
             }
             .navigationTitle("Contacts")
@@ -25,5 +23,5 @@ struct ContactsView: View {
 }
 
 #Preview {
-    ContactsView(mock: Person.getMock())
+    ContactsView(persons: Person.getPersons())
 }
