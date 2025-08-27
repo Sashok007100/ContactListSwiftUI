@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContactDetailView: View {
-    var mock: Person!
+    var person: Person!
     
     var body: some View {
         List {
@@ -18,14 +18,14 @@ struct ContactDetailView: View {
                 .frame(height: 100)
                 .frame(maxWidth: .infinity)
                 
-            Label(mock.phone, systemImage: "phone")
-            Label(mock.email, systemImage: "tray")
+            Label(person.phone, systemImage: "phone")
+            Label(person.email, systemImage: "tray")
         }
-        .navigationTitle(mock.fullName)
+        .navigationTitle(person.fullName)
         .listStyle(.insetGrouped)
     }
 }
 
 #Preview {
-    ContactDetailView(mock: Person.getMock()[0])
+    ContactDetailView(person: Person.getPersons()[0])
 }

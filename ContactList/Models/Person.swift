@@ -21,7 +21,7 @@ struct Person: Identifiable {
         [phone, email]
     }
     
-    static func getMock() -> [Person] {
+    static func getPersons() -> [Person] {
         var contacts: [Person] = []
         
         let dataStore = DataStore.shared
