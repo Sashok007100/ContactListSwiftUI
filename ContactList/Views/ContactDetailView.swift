@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContactDetailView: View {
-    var person: Person!
+    let person: Person
     
     var body: some View {
         List {
@@ -27,5 +27,5 @@ struct ContactDetailView: View {
 }
 
 #Preview {
-    ContactDetailView(person: Person.getPersons()[0])
+    ContactDetailView(person: Person.getContactList().first!)
 }

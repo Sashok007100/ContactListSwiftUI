@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct NumbersView: View {
-    var persons: [Person]!
+    let contacts: [Person]
     
     var body: some View {
         NavigationStack {
-            List(persons) { person in
+            List(contacts) { person in
                 Section(person.fullName) {
                     Label(person.phone, systemImage: "phone")
                     Label(person.email, systemImage: "tray")
@@ -24,5 +24,5 @@ struct NumbersView: View {
 }
 
 #Preview {
-    NumbersView(persons: Person.getPersons())
+    NumbersView(contacts: Person.getContactList())
 }
