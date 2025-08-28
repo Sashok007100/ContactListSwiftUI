@@ -21,7 +21,7 @@ struct Person: Identifiable {
         [phone, email]
     }
     
-    static func getPersons() -> [Person] {
+    static func getContactList() -> [Person] {
         var contacts: [Person] = []
         
         let dataStore = DataStore.shared

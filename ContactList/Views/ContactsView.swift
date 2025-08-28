@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct ContactsView: View {
-    var persons: [Person]!
+    let contacts: [Person]
     
     var body: some View {
         NavigationStack {
-            List(persons) { person in
+            List(contacts) { person in
                 NavigationLink(person.fullName) {
                     ContactDetailView(person: person)
                 }
@@ -23,5 +23,5 @@ struct ContactsView: View {
 }
 
 #Preview {
-    ContactsView(persons: Person.getPersons())
+    ContactsView(contacts: Person.getContactList())
 }
